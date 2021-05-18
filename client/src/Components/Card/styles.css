@@ -1,0 +1,53 @@
+.card {
+  border: 5px solid #ccc;
+  border-radius: 10px;
+  text-align: center;
+  min-width: 250px;
+  height: 300px;
+  background-color: rgba(255, 127, 80, 0.616);
+  margin: 20px 10px;
+}
+.card img {
+  max-width: 150px;
+  max-height: 150px;
+  margin: 10px 15px;
+}
+.name {
+  text-transform: capitalize;
+  font-family: Lato, sans-serif;
+  font-weight: bold;
+  line-height: 0px;
+  margin: 0;
+}
+
+.types p {
+  text-transform: uppercase;
+  margin: 10px;
+  color: black;
+  background-color: #ccc;
+  border-radius: 5px;
+}
+.types span {
+  flex-wrap: wrap;
+  border: 2px dashed black;
+  background-color: #ccc;
+  margin-right: 5px;
+}
+
+.btn-more {
+  margin: 15px;
+  padding: 8px 10px;
+  background-color: rgb(111, 155, 110);
+  border: none;
+  border-radius: 5px;
+  color: #eee;
+}
+
+.btn-more:hover {
+  margin: 15px;
+  padding: 9px 11px;
+  background-color: rgb(87, 139, 86);
+  border: none;
+  border-radius: 5px;
+  color: #ccc;
+}

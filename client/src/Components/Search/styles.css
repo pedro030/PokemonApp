@@ -1,0 +1,31 @@
+.search-bar {
+  text-align: center;
+  padding: 10px;
+}
+
+.input-text {
+  padding: 10px;
+  border-radius: 5px 0 0 5px;
+  border: 3px solid #eee;
+  border-right: none;
+  background-color: rgba(128, 128, 128, 0.76);
+  font-size: medium;
+}
+
+.input-btn {
+  padding: 10px;
+  border-radius: 0 5px 5px 0;
+  border: 3px solid #eee;
+  border-left: none;
+  background-color: rgba(128, 128, 128, 0.76);
+  font-size: medium;
+}
+
+.input-btn:hover {
+  border-radius: 0 5px 5px 0;
+  border: 3px solid #eee;
+  border-left: none;
+  background-color: rgb(128, 128, 128);
+  font-size: medium;
+  color: #eee;
+}

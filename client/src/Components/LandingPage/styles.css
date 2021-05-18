@@ -1,0 +1,47 @@
+.container {
+  border: 1px solid white;
+  height: 100vh;
+  background-image: url("../../assets/fondoLanding.jpg");
+  background-size: cover;
+  background-position: bottom;
+  margin-top: 0px;
+}
+
+.title {
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+  border: 2px solid black;
+  border-radius: 10px;
+  background-color: coral;
+  width: 80%;
+  padding: 15px;
+  margin: 40px auto;
+}
+
+.loading {
+  text-align: center;
+}
+
+.loading > p {
+  font-size: 30px;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+
+.btn {
+  font-size: 20px;
+  text-transform: uppercase;
+  padding: 15px;
+  border-radius: 5px;
+  border: none;
+  background-color: #eee;
+}
+
+.btn:hover {
+  font-weight: bold;
+  color: white;
+  background-color: coral;
+  cursor: pointer;
+  border: 1px solid white;
+}

@@ -1,0 +1,18 @@
+.menu {
+  background-color: #ccc;
+  padding: 15px;
+}
+.link {
+  padding: 15px;
+  height: 100%;
+  text-decoration: none;
+  font-family: Montserrat, sans-serif;
+  font-weight: lighter;
+  color: black;
+  border-right: 2px solid #eee;
+}
+.link:hover {
+  padding: 17px;
+  background-color: coral;
+  color: white;
+}

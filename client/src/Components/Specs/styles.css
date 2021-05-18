@@ -1,0 +1,31 @@
+.specs {
+  border: 5px solid #ccc;
+  background-color: rgba(128, 128, 128, 0.76);
+  border-radius: 10px;
+  width: 60%;
+  margin: 10px auto;
+  height: 400px;
+  display: flex;
+}
+.specs img {
+  width: 500px;
+  padding: 10px;
+  padding-right: 40px;
+}
+.stats {
+  display: flex;
+  flex-direction: column;
+  width: inherit;
+}
+.stats h2 {
+  text-transform: capitalize;
+  border-bottom: 3px solid #eee;
+  margin-right: 10px;
+}
+.stats p {
+  border-bottom: 3px solid #eee;
+  margin: 10px;
+}
+.stats > p > span {
+  font-weight: bold;
+}
