@@ -32,9 +32,11 @@ function LandingPage() {
 						Tambien puedes ver sus especificaciones, buscar por nombre y si
 						quieres puedes crear pokemones
 					</p>
-					<Link to='/home/pokemons' className='link'>
-						Ir
-					</Link>
+					{pokemonsLoaded && (
+						<Link to='/home/pokemons' className='link'>
+							Ir
+						</Link>
+					)}
 				</div>
 				<p className='copyRight'>©2021 Pedro Contreras</p>
 			</section>
