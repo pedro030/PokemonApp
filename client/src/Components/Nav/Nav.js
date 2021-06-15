@@ -1,21 +1,47 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import "./styles.css";
+import React, {useState} from 'react';
+import {Link} from 'react-router-dom';
+import NavStyle from './styled';
 
 export function Nav() {
-  return (
-    <div className="menu">
-      <Link to="/pokemons" className="link">
-        Home
-      </Link>
-      <Link to="/pokemon/create" className="link">
-        Create Pokemon
-      </Link>
-      <Link to="/pokemon/search" className="link">
-        Search Pokemon
-      </Link>
-    </div>
-  );
+	const [show, setshow] = useState(false);
+	const toggle = () => {
+		setshow(!show);
+	};
+	return (
+		<NavStyle>
+			<div>
+				<Link to='/home/pokemons' className='logo'>
+					PokemonApp
+				</Link>
+			</div>
+			<div
+				className={`menuToggle ${show ? 'active' : null}`}
+				onClick={() => toggle()}
+			></div>
+			<div className={`navigation ${show ? 'active' : null}`}>
+				<ul>
+					<li>
+						<Link
+							to='/home/pokemon/create'
+							className='link'
+							onClick={() => toggle()}
+						>
+							Create Pokemon
+						</Link>
+					</li>
+					<li>
+						<Link
+							to='/home/pokemon/search'
+							className='link'
+							onClick={() => toggle()}
+						>
+							Search Pokemon
+						</Link>
+					</li>
+				</ul>
+			</div>
+		</NavStyle>
+	);
 }
 
 export default Nav;
