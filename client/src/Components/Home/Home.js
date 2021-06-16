@@ -1,19 +1,27 @@
-import React from "react";
-import { useSelector } from "react-redux";
-import "./styles.css";
+import React, {useEffect} from 'react';
+import {useDispatch, useSelector} from 'react-redux';
+import {getPokemons, getTypes} from '../../actions/index';
+import './styles.css';
 
 // components
-import Filters from "../Filters/Filters";
-import Cards from "../Cards/Cards";
+import Filters from '../Filters/Filters';
+import Cards from '../Cards/Cards';
 
 // export function Home(props){
 export default function Home() {
-  const pokemonsShowed = useSelector((store) => store.pokemonsShowed);
+	const dispatch = useDispatch();
 
-  return (
-    <div className="home">
-      <Filters />
-      <Cards className="card" show={pokemonsShowed} />
-    </div>
-  );
+	const pokemonsShowed = useSelector((store) => store.pokemonsShowed);
+	const pokemonsLoaded = useSelector((store) => store.pokemonsLoaded);
+	useEffect(() => {
+		dispatch(getPokemons());
+		dispatch(getTypes());
+	}, []);
+
+	return (
+		<div className='home'>
+			<Filters />
+			<Cards className='card' show={pokemonsShowed} />
+		</div>
+	);
 }

@@ -10,9 +10,7 @@ export default function Card(props) {
 			<p className='name'>{props.name}</p>
 			<div className='types'>
 				<p>Types</p>
-				{props.types.map((t) => (
-					<span key={`${t}`}>{t}</span>
-				))}
+				{props.types && props.types.map((t) => <span key={`${t}`}>{t}</span>)}
 			</div>
 			<Link to={`/home/pokemons/${props.id}`}>
 				<button className='btn-more'>More Details</button>
