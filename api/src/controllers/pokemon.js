@@ -83,13 +83,14 @@ async function createPokemon(req, res) {
 		if (name) {
 			let poke = await Pokemon.create({
 				id: uuidv4(),
-				name,
+				name: name.toLowerCase(),
 				hp,
 				attack,
 				defense,
 				speed,
 				height,
 				weight,
+				img: 'https://ih1.redbubble.net/image.485923660.1240/flat,750x,075,f-pad,750x1000,f8f8f8.u1.jpg',
 			});
 			await poke.addTypes(types);
 			let type = await poke.getTypes({attributes: ['name', 'id']});
@@ -135,15 +136,16 @@ async function asyncgetPokemon() {
 
 async function getPokemons(req, res) {
 	try {
-		if (!pokemonApi.api && !pokemonApi.db) {
-			let db = await Pokemon.findAll({include: [Type]});
-			db = db.map((p) => {
-				let types = p.types.map((t) => t.name);
-				return {...p.dataValues, types};
-			});
+		if (!pokemonApi.api) {
 			let api = await asyncgetPokemon();
-			pokemonApi = {api, db};
+			pokemonApi = {...pokemonApi, api};
 		}
+		let db = await Pokemon.findAll({include: [Type]});
+		db = db.map((p) => {
+			let types = p.types.map((t) => t.name);
+			return {...p.dataValues, types};
+		});
+		pokemonApi = {...pokemonApi, db};
 		res.status(200).send(pokemonApi);
 	} catch (error) {
 		console.log(error);

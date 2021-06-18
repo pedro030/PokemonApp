@@ -12,7 +12,6 @@ export default function Home() {
 	const dispatch = useDispatch();
 
 	const pokemonsShowed = useSelector((store) => store.pokemonsShowed);
-	const pokemonsLoaded = useSelector((store) => store.pokemonsLoaded);
 	useEffect(() => {
 		dispatch(getPokemons());
 		dispatch(getTypes());

@@ -10,6 +10,8 @@ import Specs from './Components/Specs/Specs';
 import CreatePokemon from './Components/CreatePokemon/CreatePokemon';
 import Search from './Components/Search/Search';
 import './App.css';
+import dotenv from 'dotenv';
+dotenv.config();
 
 function App() {
 	return (

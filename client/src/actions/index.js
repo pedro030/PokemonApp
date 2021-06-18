@@ -13,10 +13,11 @@ import {
 	CLEAR_POKEMON_SPECS,
 	CLEAR_POKEMON_SEARCH,
 } from '../constants';
+const {REACT_APP_BACKEND_URL} = process.env;
 
 export function addPokemon(specs) {
 	return (dispatch) => {
-		axios.post('http://localhost:3001/pokemon', specs).then((r) => {
+		axios.post(`${REACT_APP_BACKEND_URL}/pokemon`, specs).then((r) => {
 			dispatch({type: ADD_POKEMON, payload: r.data});
 		});
 	};
@@ -24,7 +25,7 @@ export function addPokemon(specs) {
 
 export function getTypes() {
 	return (dispatch) => {
-		return axios.get('http://localhost:3001/type').then((r) => {
+		return axios.get(`${REACT_APP_BACKEND_URL}/type`).then((r) => {
 			dispatch({type: GET_TYPES, payload: r.data});
 		});
 	};
@@ -32,7 +33,7 @@ export function getTypes() {
 
 export function getPokemons() {
 	return (dispatch) => {
-		return axios.get('http://localhost:3001/pokemon').then((r) => {
+		return axios.get(`${REACT_APP_BACKEND_URL}/pokemon`).then((r) => {
 			dispatch({type: GET_POKEMONES, payload: r.data});
 		});
 	};
@@ -41,7 +42,7 @@ export function getPokemons() {
 export function getPokemonName(name) {
 	return (dispatch) => {
 		return axios
-			.get(`http://localhost:3001/pokemon/?name=${name}`)
+			.get(`${REACT_APP_BACKEND_URL}/pokemon/?name=${name}`)
 			.then((r) => {
 				dispatch({type: GET_POKEMON_NAME, payload: r.data});
 			});
@@ -51,12 +52,11 @@ export function getPokemonName(name) {
 export function getPokemonById(id) {
 	return (dispatch) => {
 		return axios
-			.get(`http://localhost:3001/pokemon/${id}`)
+			.get(`${REACT_APP_BACKEND_URL}/pokemon/${id}`)
 			.then((r) => {
 				dispatch({type: GET_POKEMON_ID, payload: r.data});
 			})
 			.catch((err) => {
-				console.log(err);
 				dispatch({type: GET_POKEMON_ID, payload: err});
 			});
 	};

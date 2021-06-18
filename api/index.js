@@ -18,18 +18,24 @@
 //                       `=---='
 //     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 const server = require('./src/app.js');
-const { conn} = require('./src/db.js');
+const {conn} = require('./src/db.js');
 const {apiTypes} = require('./src/controllers/types');
-const {asyncgetPokemon} = require('./src/controllers/pokemon')
+const {asyncgetPokemon} = require('./src/controllers/pokemon');
+const PORT = process.env.PORT || 3001;
 
 // Syncing all the models at once.
-conn.sync({ force: true }).then(() => {
-  console.log('db conection success')
-  server.listen(3001, () => {
-    console.log('%s listening at 3001'); // eslint-disable-line no-console
-  });
-})
-.then(()=>{
-  apiTypes()
-  asyncgetPokemon()
-})
+conn
+	.sync({force: true})
+	.then(() => {
+		console.log('db conection success');
+		server.listen(PORT, () => {
+			console.log(`%s listening at port ${PORT}`); // eslint-disable-line no-console
+		});
+	})
+	.then(() => {
+		apiTypes();
+		asyncgetPokemon();
+	})
+	.catch((err) => {
+		console.log(err);
+	});

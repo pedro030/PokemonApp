@@ -21,6 +21,11 @@ export function Nav() {
 			<div className={`navigation ${show ? 'active' : null}`}>
 				<ul>
 					<li>
+						<Link to='/home/pokemons' className='link' onClick={() => toggle()}>
+							Home
+						</Link>
+					</li>
+					<li>
 						<Link
 							to='/home/pokemon/create'
 							className='link'
@@ -36,6 +41,11 @@ export function Nav() {
 							onClick={() => toggle()}
 						>
 							Search Pokemon
+						</Link>
+					</li>
+					<li>
+						<Link to='/' className='link' onClick={() => toggle()}>
+							LandingPage
 						</Link>
 					</li>
 				</ul>
