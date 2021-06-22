@@ -9,11 +9,11 @@ export default function Card(props) {
 			<img src={`${props.img}`} alt={`${props.name} image`} />
 			<p className='name'>{props.name}</p>
 			<div className='types'>
-				<p>Types</p>
+				<p>Tipos</p>
 				{props.types && props.types.map((t) => <span key={`${t}`}>{t}</span>)}
 			</div>
 			<Link to={`/home/pokemons/${props.id}`}>
-				<button className='btn-more'>More Details</button>
+				<button className='btn-more'>Más Detalles</button>
 			</Link>
 		</div>
 	);

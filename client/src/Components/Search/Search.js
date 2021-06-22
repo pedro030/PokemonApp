@@ -34,11 +34,11 @@ export default function Search() {
 					<input
 						className='input-text'
 						type='text'
-						placeholder='Search a pokemon'
+						placeholder='Busca un pokemon'
 						value={name}
 						onChange={(e) => handleChange(e)}
 					/>
-					<input className='input-btn' type='submit' value='Search' />
+					<input className='input-btn' type='submit' value='Buscar' />
 				</form>
 			</div>
 			{pokemonSearch.error ? (

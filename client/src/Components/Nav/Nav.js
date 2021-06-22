@@ -31,7 +31,7 @@ export function Nav() {
 							className='link'
 							onClick={() => toggle()}
 						>
-							Create Pokemon
+							Crear Pokemon
 						</Link>
 					</li>
 					<li>
@@ -40,7 +40,7 @@ export function Nav() {
 							className='link'
 							onClick={() => toggle()}
 						>
-							Search Pokemon
+							Buscar Pokemon
 						</Link>
 					</li>
 					<li>
